@@ -1,5 +1,4 @@
 import { OpenAIStream } from "@/utils";
-import { loadEnvConfig } from "@next/env";
 export const config = {
   runtime: "edge"
 };
@@ -10,8 +9,7 @@ const handler = async (req: Request): Promise<Response> => {
       prompt: string;
       apiKey: string;
     };
-    loadEnvConfig("");
-    const apiKe =  process.env.OPENAI_API_KEY!;
+    const apiKe =  process.env.NEXT_PUBLIC_OPENAI_API_KEY!;
 
     console.log("API KEY",apiKe)
     // @ts-ignore
