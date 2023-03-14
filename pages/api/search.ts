@@ -1,5 +1,4 @@
 import { supabaseAdmin } from "@/utils";
-import {loadEnvConfig} from "@next/env";
 
 export const config = {
   runtime: "edge"
@@ -12,7 +11,6 @@ const handler = async (req: Request): Promise<Response> => {
       apiKey: string;
       matches: number;
     };
-    loadEnvConfig("");
     const apiKe = process.env.NEXT_PUBLIC_OPENAI_API_KEY!;
     const input = query.replace(/\n/g, " ");
     const res = await fetch("https://api.openai.com/v1/embeddings", {
