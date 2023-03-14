@@ -2,9 +2,6 @@ import { OpenAIStream } from "@/utils";
 import * as process from "process";
 
 export const config = {
-  env: {
-    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
-  },
   runtime: "edge"
 };
 
