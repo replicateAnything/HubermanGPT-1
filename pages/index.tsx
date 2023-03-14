@@ -39,7 +39,7 @@ export default function Home() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ query, apiKey, matches: matchCount })
+      body: JSON.stringify({ query, apiKey:"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", matches: matchCount })
     });
 
     if (!searchResponse.ok) {
@@ -76,7 +76,7 @@ export default function Home() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ query, apiKey, matches: matchCount })
+      body: JSON.stringify({ query, apiKey:"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", matches: matchCount })
     });
 
     if (!searchResponse.ok) {
@@ -99,7 +99,7 @@ export default function Home() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ prompt, apiKey })
+      body: JSON.stringify({ prompt, apiKey:"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" })
     });
 
     if (!answerResponse.ok) {
