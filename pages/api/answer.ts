@@ -1,5 +1,4 @@
 import { OpenAIStream } from "@/utils";
-import * as process from "process";
 
 export const config = {
   runtime: "edge"
@@ -11,8 +10,8 @@ const handler = async (req: Request): Promise<Response> => {
       prompt: string;
       apiKey: string;
     };
-    // console.log("THIS IS API KEY",process.env.OPENAI_API_KEY)
-    const stream = await OpenAIStream(prompt, apiKey);
+    const apiKe = await process.env.OPENAI_API_KEY as string ;
+    const stream = await OpenAIStream(prompt, apiKe);
 
     return new Response(stream);
   } catch (error) {
