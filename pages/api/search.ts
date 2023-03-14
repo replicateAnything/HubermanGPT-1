@@ -1,4 +1,5 @@
 import { supabaseAdmin } from "@/utils";
+import process from "process";
 
 export const config = {
   runtime: "edge"
@@ -11,13 +12,13 @@ const handler = async (req: Request): Promise<Response> => {
       apiKey: string;
       matches: number;
     };
-
+    console.log(apiKey)
     const input = query.replace(/\n/g, " ");
-
+    let apiKeyr = process.env.OPENAI_API_KEY as string
     const res = await fetch("https://api.openai.com/v1/embeddings", {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`
+        Authorization: `Bearer ${apiKeyr}`
       },
       method: "POST",
       body: JSON.stringify({

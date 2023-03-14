@@ -18,8 +18,7 @@ export default function Home() {
 
   const [mode, setMode] = useState<"search" | "chat">("chat");
   const [matchCount, setMatchCount] = useState<number>(5);
-  const apiK = process.env.OPENAI_API_KEY;
-  const [apiKey, setApiKey] = useState<string>(apiK as string);
+  const [apiKey, setApiKey] = useState<string>("");
 
   const handleSearch = async () => {
   
@@ -151,7 +150,7 @@ export default function Home() {
   }, [matchCount]);
 
   useEffect(() => {
-    const PG_KEY = localStorage.getItem("PG_KEY");
+    const PG_KEY = "pk-JEobLTeNmUaFS8t4PDplTB3lbkFJFsFflfILCL1mPeHgNnWr";
     const PG_MATCH_COUNT = localStorage.getItem("PG_MATCH_COUNT");
     const PG_MODE = localStorage.getItem("PG_MODE");
 
