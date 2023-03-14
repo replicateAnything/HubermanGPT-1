@@ -18,7 +18,8 @@ export default function Home() {
 
   const [mode, setMode] = useState<"search" | "chat">("chat");
   const [matchCount, setMatchCount] = useState<number>(5);
-  const [apiKey, setApiKey] = useState<string>("");
+  const apiK = process.env.OPENAI_API_KEY;
+  const [apiKey, setApiKey] = useState<string>(apiK as string);
 
   const handleSearch = async () => {
   
